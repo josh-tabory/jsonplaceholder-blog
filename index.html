@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <title>JSON Placeholder Blog</title>
+    
+</head>
+<body class="loading">
+    <!-- LOADING SCREEN -->
+    <div class="loader">
+        <div class="one"></div>
+        <div class="two"></div>
+        <p>Be Kind. Be Patient...</p>
+    </div>
+
+
+    <header>
+        <div><i class="bi-person-circle"></i> Welcome back Josh</div>        
+    </header>
+
+    <main class="wrap">
+        <h1><span>Be Still and know that i am</span>Blog</h1>
+        <!-- Button trigger modal -->
+        <button type="button" id="newPost"class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi-stickies-fill"></i>Create New Post</button>
+        <ul id="posts""></ul>
+    </main>
+
+    <footer></footer>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create a new post</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="postForm">
+                    <div class="form-group">
+                      <label for="postTitle">Title</label>
+                      <input type="text" class="form-control" id="postTitle" required >  
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postBody" class="form-label">Body</label>
+                        <textarea class="form-control" id="postBody" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" id="addPost" data-bs-dismiss="modal" class="btn btn-primary disabled">Submit</button>
+                  </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
+</body>
+</html>
