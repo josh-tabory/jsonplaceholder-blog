@@ -24,7 +24,7 @@
 
 
     <header>
-        <div><i class="bi-person-circle"></i> Welcome back Josh Tabory</div>        
+        <div><i class="bi-person-circle"></i> Welcome back Josh</div>        
     </header>
 
     <main class="wrap">
@@ -45,17 +45,17 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="postForm">
+                <form id="postForm" needs-validation>
                     <div class="form-group">
                       <label for="postTitle">Title</label>
-                      <input type="text" class="form-control" id="postTitle" required >  
+                      <input type="text" class="form-control" id="postTitle" required >
                     </div>
 
                     <div class="form-group">
                         <label for="postBody" class="form-label">Body</label>
                         <textarea class="form-control" id="postBody" rows="3" required></textarea>
                     </div>
-                    <button type="submit" id="addPost" data-bs-dismiss="modal" class="btn btn-primary disabled">Submit</button>
+                    <button type="submit" id="addPost" class="btn btn-primary">Submit</button>
                   </form>
             </div>
         </div>
