@@ -1,10 +1,11 @@
 'use strict';
 
 // GLOBAL VARIABLES
+let modal = document.querySelector('.modal');
 let postForm = document.querySelector('#postForm');
 let postBody = document.querySelector('#postBody');
 let postTitle = document.querySelector('#postTitle');
-let modal = document.querySelector('.modal');
+let addPost = document.querySelector('#addPost');
 
 // LOAD LIST OF BLOG POSTS
 window.onload = function() {
@@ -55,30 +56,24 @@ postForm.addEventListener("submit", function(e) {
         
     })
     .catch(err => console.log('Error message:', err.statusText));
-            let posts = document.querySelector('#posts');
-            let newLi = document.createElement("li");
-            
-            newLi.classList.add('post');
-            posts.appendChild(newLi);
-            newLi.innerHTML = `
-                <h2><a href="#">${newPost.title}</a></h2>
-                <p>${newPost.body}</p>
-            ` 
-            //RESET MODAL
-            e.target.reset();
-            addPost.classList.add('disabled');         
-});
 
-
-// CHECK IF MODAL FORM IS VALID AND ENABLE SUBMIT
-modal.addEventListener("keyup", function(e) {
+    // APPEND NEW POSTS TO BLOG
+    let posts = document.querySelector('#posts');
+    let newLi = document.createElement("li");
+    
+    newLi.classList.add('post');
+    posts.appendChild(newLi);
+    newLi.innerHTML = `
+        <h2><a href="#">${newPost.title}</a></h2>
+        <p>${newPost.body}</p>
+    ` 
+    //VALIDATE AND RESET MODAL
     if(postBody.value && postTitle.value) {
-        addPost.classList.remove('disabled');
-    }else {
-        addPost.classList.add('disabled');
-    }
+        addPost.setAttribute("data-bs-dismiss", "modal");
+        addPost.click();
+        e.target.reset().click();
+    }        
 });
-
 
 // ADD FOCUS TO MODAL INPUT
 modal.addEventListener('shown.bs.modal', function () {
